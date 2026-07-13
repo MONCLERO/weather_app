@@ -1,4 +1,4 @@
-// GRAB HTML ELEMENTS BY ID 
+// GRAB HTML ELEMENTS BY ID - Global Scope
 
 // Search Bar
 const cityInput = document.getElementById('city-input');
@@ -94,56 +94,6 @@ function getWeatherDescription(code) {
     return { desc: 'Unknown', icon: '🌡️' };
 }
 
-// Display 5 day Forecast
-function displayForecast(daily) {
-
-    forecastRow.innerHTML = '';
-
-    // Loop through 5 days
-    for (let i = 0; i < 5; i++) {
-
-        let weatherInfo = getWeatherDescription(daily.weather_code[i]);
-
-        let date = new Date(daily.time[i]);
-        let dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
-
-        let card = document.createElement('div');
-        card.className = 'forecast-card';
-
-        card.innerHTML = `
-          <p class="forecast-day">${dayName}</p>
-          <p class="forecast-icon">${weatherInfo.icon}</p>
-          <p class="forecast-high">H: ${daily.temperature_2m_max[i]}°C</p>
-          <p class="forecast-low">L: ${daily.temperature_2m_min[i]}°C</p>
-        `;
-
-        // Inject card into the forecast container
-        forecastRow.appendChild(card);
-    }
-}
-
-// Display Current Weather
-function displayCurrentWeather(data, name, country) {
-
-    currentTempC = data.current.temperature_2m;
-
-    isCelsius = true;
-    unitToggleBtn.textContent = 'Switch to °F';
-    
-    let weatherInfo = getWeatherDescription(data.current.weather_code);
-
-    // Update all the HTML Elements
-    cityName.textContent = `${name}, ${country}`;
-    temperatureReading.textContent = `${data.current.temperature_2m}°C`;
-    weatherDescription.textContent = weatherInfo.desc;
-    weatherIcon.textContent = weatherInfo.icon;
-    humiditystats.textContent = `${data.current.relative_humidity_2m}%`;
-    windstats.textContent = `${data.current.wind_speed_10m} km/h`;
-    uvIndexStats.textContent = `${data.current.uv_index}`;
-
-    loadingMsg.textContent = '';
-}
-
 // This handles anything linked to searching - MAIN ENGINE
 async function handleSearch() {
 
@@ -172,6 +122,56 @@ async function handleSearch() {
 }
 
 searchBtn.addEventListener('click', handleSearch);
+
+// Display Current Weather
+function displayCurrentWeather(data, name, country) {
+
+    currentTempC = data.current.temperature_2m;
+
+    isCelsius = true;
+    unitToggleBtn.textContent = 'Switch to °F';
+    
+    let weatherInfo = getWeatherDescription(data.current.weather_code);
+
+    // Update all the HTML Elements
+    cityName.textContent = `${name}, ${country}`;
+    temperatureReading.textContent = `${data.current.temperature_2m}°C`;
+    weatherDescription.textContent = weatherInfo.desc;
+    weatherIcon.textContent = weatherInfo.icon;
+    humiditystats.textContent = `${data.current.relative_humidity_2m}%`;
+    windstats.textContent = `${data.current.wind_speed_10m} km/h`;
+    uvIndexStats.textContent = `${data.current.uv_index}`;
+
+    loadingMsg.textContent = '';
+}
+
+// Display 5 day Forecast
+function displayForecast(daily) {
+
+    forecastRow.innerHTML = '';
+
+    // Loop through 5 days
+    for (let i = 0; i < 5; i++) {
+
+        let weatherInfo = getWeatherDescription(daily.weather_code[i]);
+
+        let date = new Date(daily.time[i]);
+        let dayName = date.toLocaleDateString('en-US', { weekday: 'long' });
+
+        let card = document.createElement('div');
+        card.className = 'forecast-card';
+
+        card.innerHTML = `
+          <p class="forecast-day">${dayName}</p>
+          <p class="forecast-icon">${weatherInfo.icon}</p>
+          <p class="forecast-high">H: ${daily.temperature_2m_max[i]}°C</p>
+          <p class="forecast-low">L: ${daily.temperature_2m_min[i]}°C</p>
+        `;
+
+        // Inject card into the forecast container
+        forecastRow.appendChild(card);
+    }
+}
 
 // Building Geolocation Function
 function getLocation() {
