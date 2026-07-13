@@ -65,7 +65,9 @@ README.md       → Project documentation
 ## HOW IT WORKS
 
 ```
-User searches a city
+getLocation() → requests user's location access for current weather data display
+     ↓
+User proceeds to search a city
      ↓
 getCoordinates() → fetches lat & lon from Geocoding API
      ↓
@@ -74,8 +76,6 @@ getWeather() → fetches weather data using coordinates
 displayCurrentWeather() → updates current weather on page
      ↓
 displayForecast() → builds and injects 5 forecast cards
-     ↓
-getLocation() → requests user's location access for current weather data display
 ```
 
 ---
@@ -89,10 +89,10 @@ git clone https://github.com/MONCLERO/weather_app.git
 
 2. Open the project folder
 ```
-cd weather_app
+code weather_app
 ```
 
-3. code index.html & run through LiveServer
+3. Run through LiveServer on vs or curl on GitBash terminal
 
 ---
 
@@ -119,4 +119,4 @@ Building this project taught me some of the most important concepts in modern Ja
 ---
 
 ## Author 
-Cyril Meshach - [@monclero]
+Cyril Meshach - [@monclero](https://github.com/MONCLERO)
