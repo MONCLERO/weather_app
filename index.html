@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Weather App Page</title>
+  </head>
+
+  <body>
+    <header id="navbar">
+
+      <h1>🌦️ Weather App</h1>
+
+      <!-- SEARCH INPUT FIELD & BUTTON -->
+      <div id="search-container">
+        <input type="text" id="city-input" placeholder="Find City..." />
+        <button id="search-btn">Search</button>
+        <div id="search-history"></div>
+      </div>
+
+    </header>
+
+    <main>
+      <!-- ERROR MESSAGE -->
+      <p id="error-msg"></p>
+
+      <!-- LOADING MESSAGE -->
+      <p id="loading-msg"></p>
+
+      <!-- HERO SECTION (current weather) -->
+      <section id="hero">
+
+        <button id="unit-toggle">Switch to °F</button>
+        <div id="weather-icon">⛅</div>
+        <h2 id="city-name">City Name</h2>
+        <h3 id="temperature">--°C</h3>
+        <p id="description">Description</p>
+
+      </section>
+
+      <!-- STATS ROW -->
+      <section id="stats">
+        
+        <div class="stats-box">
+          <h4>Humidity</h4>
+          <p id="humidity">--%</p>
+        </div>
+
+        <div class="stats-box">
+          <h4>Wind</h4>
+          <p id="wind-speed">-- km/h</p>
+        </div>
+
+        <div class="stats-box">
+          <h4>UV Index</h4>
+          <p id="uv-index">--</p>
+        </div>
+
+      </section>
+
+      <!-- 5 DAY FORECAST -->
+      <section id="forecast">
+        
+        <h3>5-Day Forecast</h3>
+        <div id="forecast-container">
+          <!-- Forecast cards will be injected here by Javascript -->
+        </div>
+        
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
