@@ -1,4 +1,4 @@
-# ☀️ Weather App
+# ☀️ WEATHER APP
 
 **Name:** Cyril Meshach
 
@@ -64,6 +64,7 @@ README.md       → Project documentation
 
 ## HOW IT WORKS
 
+```
 User searches a city
      ↓
 getCoordinates() → fetches lat & lon from Geocoding API
@@ -75,44 +76,47 @@ displayCurrentWeather() → updates current weather on page
 displayForecast() → builds and injects 5 forecast cards
      ↓
 getLocation() → requests user's location access for current weather data display
+```
 
 ---
 
 ## How to Run Locally
-### 1. Clone the repository:
+
+1. Clone the repository:
 ```
 git clone https://github.com/MONCLERO/weather_app.git
 ```
 
-### 2. Open the project folder
+2. Open the project folder
 ```
 cd weather_app
 ```
 
-### 3. Open index.html in your browser - no installation or setup required!
+3. code index.html & run through LiveServer
 
 ---
 
 ## Concepts learnt in building project
-- Building this project taught me some of the most important concepts in modern Javascript:
 
-- Fetch API & async/await - How to talk to the internet and handle delayed responses
+Building this project taught me some of the most important concepts in modern Javascript:
 
-- Two Step API calls - converting city names to coordinates before fetching weather
+- **Fetch API & async/await** - How to talk to the internet and handle delayed responses
 
-- DOM Manipulation - Dynamically crating and updating HTML elements with Javascript
+- **Two Step API calls** - converting city names to coordinates before fetching weather
 
-- Seperation of Concerns - Learnt this term in the course of my research and it involves breaking code into small focused functions each with one job
+- **DOM Manipulation** - Dynamically crating and updating HTML elements with Javascript
 
-- localStorage - persisting data across browser sessions using JSON.stringify and JSON.parse
+- **Seperation of Concerns** - Learnt this term in the course of my research and it involves breaking code into small focused functions each with one job
 
-- Geolocation API - accessing the browser's built-in location detection
+- **localStorage** - persisting data across browser sessions using JSON.stringify and JSON.parse
 
-- Error Handling - gracefully managing failed API calls and invalid user input
+- **Geolocation API** - accessing the browser's built-in location detection
 
-- Responsive Design - building layouts that work on both desktop and mobile
+- **Error Handling** - gracefully managing failed API calls and invalid user input
+
+- **Responsive Design** - building layouts that work on both desktop and mobile
 
 ---
 
 ## Author 
-Cyril Meshach - @monclero
+Cyril Meshach - [@monclero]
